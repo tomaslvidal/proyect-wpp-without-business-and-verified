@@ -8,3 +8,20 @@ SSH
 server: consolid.eviajes.online
 user: nodesv1
 pass: kdawkdGL#LUE8
+
+
+nodev1.eviajes.online
+
+localhost:9595/
+
+----
+
+Lo que tengo que hacer es UN FRONT
+
+--PROYECTO FRONT--
+El front necesita un LISTADO con todo lo que paso por ej movimientos
+    -LISTADO
+        -MSJ que me Llega del WPP
+        -MSJ que se enviaron desde el proyecto por ej
+            -Nro: 11-2234-3321: Envio el siguiente msj ''
+        
