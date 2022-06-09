@@ -14,11 +14,14 @@ $msgReceived = $data['_data']['body'];
 function sendMessage($to,$msg,$image = ''){
     $curl = curl_init();
 
-    if($image==''){
+    if($image == ''){
         $url = 'http://nodesv1.eviajes.online:9595/chat/sendmessage/'.str_replace('@c.us','',$to);
+        
         $post = 'message='.$msg;
-    } else {
+    }
+    else {
         $url = 'http://nodesv1.eviajes.online:9595/chat/sendimage/'.str_replace('@c.us','',$to);
+        
         $post = 'caption='.$msg.'&image='.$image;
     }
 

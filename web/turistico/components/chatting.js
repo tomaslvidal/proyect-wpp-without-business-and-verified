@@ -20,7 +20,7 @@ router.post('/sendmessage/:phone', async (req,res) => {
         res.send({ status:"error", message:"please enter valid phone and message" })
     } else {
         client.sendMessage(phone + '@c.us', message).then((response) => {
-            if (response.id.fromMe) {
+            if(response.id.fromMe){
                 res.send({ status:'success', message: `Message successfully sent to ${phone}` })
             }
         });
