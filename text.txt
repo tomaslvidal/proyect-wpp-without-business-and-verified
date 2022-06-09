@@ -1,0 +1,10 @@
+FTP:
+16:06
+server: nodesv1.eviajes.online
+user: nodesv1
+pass: juanete28
+16:06
+SSH
+server: consolid.eviajes.online
+user: nodesv1
+pass: kdawkdGL#LUE8
