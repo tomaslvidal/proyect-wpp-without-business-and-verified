@@ -10,7 +10,8 @@ const { Client, LocalAuth, Buttons, List } = require("whatsapp-web.js");
 process.title = "whatsapp-node-api";
 global.client = new Client({
   authStrategy: new LocalAuth({
-    clientId: 'aptek-test'
+    //(Math.random() + 1).toString(36).substring(7)
+    clientId: '7n3kii'
   }),
   puppeteer: { headless: true, args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-extensions'] },
 });
@@ -47,6 +48,21 @@ client.on("auth_failure", () => {
 
 client.on("ready", () => {
   console.log("Client is ready!");
+  setInterval(function(){
+    //javascript date and hour
+    var date = new Date();
+    var hour = date.getHours();
+    var minute = date.getMinutes();
+    var second = date.getSeconds();
+    var day = date.getDate();
+    var month = date.getMonth() + 1;
+    var year = date.getFullYear();
+    var time = hour + ":" + minute + ":" + second;
+    var dateTime = day + "/" + month + "/" + year + " " + time;
+
+    // console.clear();
+    // console.log('Still Alive! '+dateTime);
+  },30000)
 });
 
 client.on("message", async (msg) => {
