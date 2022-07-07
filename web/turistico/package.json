@@ -33,11 +33,13 @@
     "express": "^4.18.1",
     "fs": "0.0.1-security",
     "nodemon": "^2.0.16",
+    "pm2": "^5.2.0",
     "puppeteer": "^14.1.1",
     "qrcode-terminal": "^0.12.0",
     "request": "^2.88.2",
     "selenium-webdriver": "^4.2.0",
     "shelljs": "^0.8.5",
+    "socket.io": "^4.5.1",
     "valid-url": "^1.0.9",
     "whatsapp-web.js": "latest"
   },

@@ -4,6 +4,10 @@ const request = require('request')
 const vuri = require('valid-url');
 const fs = require('fs');
 
+import DBModel from '../models/model';
+
+const model = new DBModel();
+
 const mediadownloader = (url, path, callback) => {
     request.head(url, (err, res, body) => {
       request(url)
@@ -21,7 +25,22 @@ router.post('/sendmessage/:phone', async (req,res) => {
     } else {
         client.sendMessage(phone + '@c.us', message).then((response) => {
             if(response.id.fromMe){
-                res.send({ status:'success', message: `Message successfully sent to ${phone}` })
+                let message_save = {
+                    // id : req.body.id,
+                    numero : '1122532556',
+                    mensaje : message,
+                    destinatario : phone,
+                    tipo: 'send'
+                }
+        
+                model.save(message_save, (err) => {
+                    if(err){
+                        //
+                    }
+                    else{
+                        res.send({ status:'success', message: `Message successfully sent to ${phone}` })
+                    }
+                });
             }
         });
     }
@@ -139,6 +158,7 @@ router.get('/getchats', async (req, res) => {
     client.getChats().then((chats) => {
         res.send({ status: "success", message: chats});
     }).catch(() => {
+        console.log(data);
         res.send({ status: "error",message: "getchatserror" })
     })
 });
